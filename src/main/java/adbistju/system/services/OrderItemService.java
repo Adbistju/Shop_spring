@@ -3,13 +3,10 @@ package adbistju.system.services;
 import adbistju.system.models.order.Order;
 import adbistju.system.models.order.OrderItem;
 import adbistju.system.models.product.Product;
-import adbistju.system.models.user.User;
-import adbistju.system.repository.OrderItemRepository;
-import adbistju.system.repository.OrderRepository;
+import adbistju.system.repository.order.OrderItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Service

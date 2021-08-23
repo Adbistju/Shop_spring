@@ -3,7 +3,7 @@ package adbistju.system.services;
 import adbistju.system.models.Cart;
 import adbistju.system.models.order.Order;
 import adbistju.system.models.user.User;
-import adbistju.system.repository.OrderRepository;
+import adbistju.system.repository.order.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package adbistju.system.controllers;
+package adbistju.system.controllers.user;
 
 import adbistju.system.dtos.oreder.OrderItemDto;
 import adbistju.system.models.Cart;
@@ -26,13 +26,28 @@ public class CartController {
 //        masterService.addToCart(principal,id,cart);
 //    }
     @GetMapping("/add/{id}")
-    public void addToCart(Principal principal, @PathVariable Long id) {
+    public void addProductToCart(Principal principal, @PathVariable Long id) {
         masterService.addToCart(principal,id,cart);
+    }
+
+    @GetMapping("/subtract/{id}")
+    public void subtractProductToCart(Principal principal, @PathVariable Long id) {
+        masterService.decrementProduct(principal,id,cart);
+    }
+
+    @GetMapping("/delete/{id}")
+    public void deleteProductToCart(Principal principal, @PathVariable Long id) {
+        masterService.deleteProductId(principal,id,cart);
     }
 
     @GetMapping("/get")
     public ArrayList<OrderItemDto> getCart(Principal principal) {
         return cart.getItems();
+    }
+
+    @GetMapping("/clear")
+    public void clearCart(Principal principal) {
+        cart.getItems().clear();
     }
 
     @GetMapping("/create")

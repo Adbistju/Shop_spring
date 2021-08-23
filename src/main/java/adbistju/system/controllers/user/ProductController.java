@@ -1,4 +1,4 @@
-package adbistju.system.controllers;
+package adbistju.system.controllers.user;
 
 import adbistju.system.dtos.ProductDto;
 import adbistju.system.error_handling.InvalidDataException;

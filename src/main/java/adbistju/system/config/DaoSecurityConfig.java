@@ -4,6 +4,7 @@
 // ---загляни в пом---
 package adbistju.system.config;
 
+import adbistju.system.repository.user.UserRepository;
 import adbistju.system.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

@@ -17,7 +17,6 @@ import java.util.Iterator;
 @Data
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Cart implements Serializable {
-    //private List<OrderItemDto> items;
     private ArrayList<OrderItemDto> items;
     private BigDecimal sum;
 
@@ -62,8 +61,13 @@ public class Cart implements Serializable {
     }
 
     public void deleteItem(Long id) {
-        items.remove(id);
-        recalculate();
+        for (int i = 0; i < items.size(); i++) {
+            if(items.get(i).getProductId()==id){
+                items.remove(i);
+                recalculate();
+                return;
+            }
+        }
     }
 
     public void recalculate(){

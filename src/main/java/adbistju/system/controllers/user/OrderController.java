@@ -1,4 +1,4 @@
-package adbistju.system.controllers;//package adbistju.system.controllers;
+package adbistju.system.controllers.user;//package adbistju.system.controllers;
 
 
 import adbistju.system.dtos.oreder.OrderDto;
