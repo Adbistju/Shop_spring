@@ -22,12 +22,13 @@ public class OrderItemService {
         return orderItemRepository.findAllByOrder(order);
     }
 
-    public void  createOrderItem(Order order, Product product){
+    public void  createOrderItem(Order order, Product product,int quantity){
         OrderItem orderItem = new OrderItem();
         orderItem.setOrder(order);
         orderItem.setPrice(product.getPrice());
         orderItem.setPricePerProduct(product.getPrice());
         orderItem.setProduct(product);
+        orderItem.setQuantity(quantity);
         orderItemRepository.save(orderItem);
     }
 }

@@ -31,7 +31,7 @@ public class DaoSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/auth_page/**").authenticated()
 //                .antMatchers("/session/**").authenticated()
                 .antMatchers("/admin/**").hasAnyRole("ADMIN", "SUPERADMIN")
-                .antMatchers("/cart/**").hasAnyRole("USER")
+                .antMatchers("/cart/**").hasAnyRole("USER","ADMIN", "SUPERADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .formLogin();

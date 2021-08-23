@@ -26,7 +26,7 @@ public class CartController {
 //        masterService.addToCart(principal,id,cart);
 //    }
     @GetMapping("/add/{id}")
-    public void addToCart(Principal principal, @PathVariable Long id/*, @RequestParam String cartName*/) {
+    public void addToCart(Principal principal, @PathVariable Long id) {
         masterService.addToCart(principal,id,cart);
     }
 

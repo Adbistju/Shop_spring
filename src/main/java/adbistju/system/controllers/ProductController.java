@@ -55,10 +55,10 @@ public class ProductController {
 //        return productService.updateProduct(productDto);
 //    }
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
-        productService.deleteById(id);
-    }
+//    @DeleteMapping("/{id}")
+//    public void deleteById(@PathVariable Long id) {
+//        productService.deleteById(id);
+//    }
 
 //    @GetMapping("/test")
 //    public ArrayList<Product> getTest() {

@@ -12,8 +12,8 @@ public class ProductFacade {
         productDto.setId(product.getId());
         productDto.setPrice(product.getPrice());
         productDto.setTitle(product.getTitle());
-        productDto.setId(product.getId());
         return productDto;
     }
+
 
 }

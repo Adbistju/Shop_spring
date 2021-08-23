@@ -40,6 +40,5 @@ public class MasterService {
     public void createOrder(Principal principal, Cart cart){
 //        principal.getName();
         orderService.createOrderForCurrentUser(userService.findByUsername(principal.getName()).get(), cart);
-        System.out.println("createOrder");
     }
 }

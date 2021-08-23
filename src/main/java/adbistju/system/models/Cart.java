@@ -28,13 +28,15 @@ public class Cart implements Serializable {
 
 
     public void addItem(OrderItemDto orderItemDto) {
-        for (OrderItemDto i: items) {
-            if(i.equals(orderItemDto)){
-                i.setQuantity(i.getQuantity()+1);
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getProductId().equals(orderItemDto.getProductId())
+                    && items.get(i).getProductTitle().equals(orderItemDto.getProductTitle())) {
+                items.get(i).setQuantity(items.get(i).getQuantity()+1);
+                recalculate();
                 return;
             }
         }
-        orderItemDto.setQuantity(orderItemDto.getQuantity()+1);
+        orderItemDto.setQuantity(1);
         items.add(orderItemDto);
         recalculate();
     }
@@ -66,8 +68,12 @@ public class Cart implements Serializable {
 
     public void recalculate(){
         sum = BigDecimal.ZERO;
+        BigDecimal buf = new BigDecimal(0);
         for (OrderItemDto i: items) {
-            sum = sum.add(i.getPrice());
+            buf = buf.add(i.getPrice());
+            buf = buf.multiply(BigDecimal.valueOf(i.getQuantity()));
+            sum = sum.add(buf);
+            buf = BigDecimal.ZERO;
         }
     }
 
