@@ -34,16 +34,10 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-//    @Transactional
-//    public ProductDto createNewProduct(ProductDto productDto) {
-//        Product product = new Product();
-//        product.setPrice(productDto.getPrice());
-//        product.setTitle(productDto.getTitle());
-////        Collection<Category> category = categoryService.findByTitle(productDto.getCategoryTitle()).orElseThrow(() -> new ResourceNotFoundException("Category doesn't exists product.categoryTitle = " + productDto.getCategoryTitle() + " (Product creation)"));
-////        product.setCategory(category);
-//        productRepository.save(product);
-//        return new ProductDto(product);
-//    }
+    public ProductDto createNewProduct(Product product) {
+        productRepository.save(product);
+        return new ProductDto(product);
+    }
 //
 //    @Transactional
 //    public ProductDto updateProduct(ProductDto productDto) {
@@ -58,8 +52,4 @@ public class ProductService {
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
-
-//    public ArrayList<Product> test(){
-//        return productRepository.findByCategoryId();
-//    }
 }
