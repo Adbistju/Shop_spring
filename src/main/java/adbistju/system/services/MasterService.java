@@ -4,6 +4,7 @@ package adbistju.system.services;
 import adbistju.system.dtos.oreder.OrderItemDto;
 import adbistju.system.models.Cart;
 import adbistju.system.models.user.User;
+import adbistju.system.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ public class MasterService {
     private final OrderService orderService;
     private final RolesService rolesService;
     private final BCryptPasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
 
     public void addToCart(Principal principal,Long idProduct, Cart cart){
         OrderItemDto orderItemDto = new OrderItemDto(productService.findById(idProduct).get());

@@ -38,16 +38,14 @@ public class ProductService {
         productRepository.save(product);
         return new ProductDto(product);
     }
-//
-//    @Transactional
-//    public ProductDto updateProduct(ProductDto productDto) {
-//        Product product = findById(productDto.getId()).orElseThrow(() -> new ResourceNotFoundException("Product doesn't exists id: " + productDto.getId() + " (for update)"));
-//        product.setPrice(productDto.getPrice());
-//        product.setTitle(productDto.getTitle());
-////        Collection<Category> category = categoryService.findByTitle(productDto.getCategoryTitle()).orElseThrow(() -> new ResourceNotFoundException("Category doesn't exists product.categoryTitle = " + productDto.getCategoryTitle() + " (Product creation)"));
-////        product.setCategory(category);
-//        return new ProductDto(product);
-//    }
+    
+    public ProductDto updateProduct(ProductDto productDto) {
+        Product product = findById(productDto.getId()).orElseThrow(() -> new ResourceNotFoundException("Product doesn't exists id: " + productDto.getId() + " (for update)"));
+        product.setPrice(productDto.getPrice());
+        product.setTitle(productDto.getTitle());
+        product.setCategory(productDto.getCategoryTitle());
+        return new ProductDto(product);
+    }
 
     public void deleteById(Long id) {
         productRepository.deleteById(id);
