@@ -25,7 +25,7 @@ public class AdminUserAndOrderController {
 
     
     @GetMapping("/order")
-    public Page<OrderDto> getAllProducts(@RequestParam MultiValueMap<String, String> params,
+    public Page<OrderDto> getAllorder(@RequestParam MultiValueMap<String, String> params,
                                          @RequestParam(name = "p", defaultValue = "1") int page) {
         return orderService.findAll(OrderSpecifications.build(params),page, 10);
     }

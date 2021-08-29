@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>help</title>
+    <style type="text/css">
+      * {
+        margin: 10px;
+        padding: 0;
+        /*font-family: "1 Amazone M";*/
+        /*font-family: "Virtual DJ";*/
+      }
+
+      .base {
+        margin: auto;
+        align-content: center;
+        background-color: azure;
+        background-color: rgb(158, 235, 235);
+      }
+
+      .center {
+        margin: auto;
+        max-width: 1440px;
+        align-content: center;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 1440px;
+        border: 10px double black;
+        margin-top: 30px;
+      }
+
+      .my-2{
+        border: 1px double black;
+        padding: 20px;
+        margin: 10px;
+      }
+
+      .controller {
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+
+      .function{
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+
+      .ulu{
+        margin-left: 40px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="base container">
+      <div class="col-12">
+        <div class="col-12">
+          <h1 class="center">Привет!</h1>
+          <h3>Очень здорово, что ты смотришь мое приложение!</h3>
+          <br><br>
+          <p>К сожалению, визуального представления тут нет. Так как делал rest контроллеры.</p>
+          <h3>В этой странице будут описание контроллеров.</h3>
+          <br><br>         
+          <hr>
+          <h2>Контроллеры для пользователей уровня USER:</h2>
+          <div class="controller">
+            <h4>UserController     /user</h4>
+            <div class="function"> 
+              <h5>Регистрация пользователя GET  /registry</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>email</li>
+                <li>username</li>
+                <li>password</li>
+              </ul>
+            </div>
+          </div> 
+          <hr>
+          <div class="controller">
+            <h4>ProductController  /products</h4>
+              <div class="function"> 
+                <h5>Получить все продукты GET</h5>
+                <p>Параметры</p>
+                <ul class="ulu">
+                  <li>page - номер страницы</li>
+                  <li>min_price</li>
+                  <li>max_price</li>
+                  <li>title</li>
+                  <li>product_id</li>
+                </ul>
+              </div>
+              <div class="function">
+                <h5>Получить продукт GET /{id}</h5>
+                <p>Параметры</p>
+                <ul class="ulu">
+                  <li>id</li>
+                </ul>
+              </div>
+            </div>
+          </div>  
+          <hr> 
+          <div class="controller">
+            <h4>OrderController /orders</h4>
+              <div class="function"> 
+                <h5>Получить заказы пользователя GET</h5>
+              </div>
+          </div> 
+          <hr>
+          <div class="controller">
+            <h4>CartController /cart</h4>
+            <div class="function"> 
+              <h5>Получить содержимое корзины GET /get</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>principal</li>
+                <li>id</li>
+              </ul>
+            </div>
+            <div class="function"> 
+              <h5>Очистить содержимое корзины GET /clear</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>principal</li>
+              </ul>
+            </div>
+            <div class="function"> 
+              <h5>Сделать заказ 		    GET /clear</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>principal</li>
+              </ul>
+            </div>
+            <div class="function"> 
+              <h5>Удалить продукт из корзины  GET /delete/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>principal</li>
+                <li>id</li>
+              </ul>
+            </div>
+            <div class="function"> 
+              <h5>Добавить/увеличить колличество
+		     на 1 продукт в корзину GET /add/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>principal</li>
+                <li>id</li>
+              </ul>
+            </div>
+            <div class="function"> 
+              <h5>Вычесть продукт на 1 из корзины/удалить его GET /subtract/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>principal</li>
+                <li>id</li>
+              </ul>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+    <div class="base container">
+      <div class="col-12">
+        <div class="col-12">
+          <h1 class="center">...</h1>
+          <h3>AdminController</h3>
+          <br /><br />
+          <h2>Контроллеры для пользователей уровня ADMIN:</h2>
+          <div class="controller">
+            <h4>AdminCategoryController /admin</h4>
+            <div class="function">
+              <h5>Получить категорию GET /category</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>title</li>
+                <li>price</li>
+                <li>category_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Обновить категорию PUT /category/update</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>category</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Удалить категорию DELETE /category/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>id</li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+          <div class="controller">
+            <h4>AdminProductController /admin</h4>
+            <div class="function">
+              <h5>Получить все продукты GET /products</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>page - номер страницы</li>
+                <li>min_price</li>
+                <li>max_price</li>
+                <li>title</li>
+                <li>category_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Получить продукт GET /products/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Получить продукт GET /products/newProduct</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>title</li>
+                <li>price</li>
+                <li>category_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Обновить продукт PUT /products/update</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>productDto</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Обновить продукт DELTE /products/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>id</li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+
+          <div class="controller">
+            <h4>AdminUserAndOrderController /admin</h4>
+            <div class="function">
+              <h5>Получить заказы пользователей GET /order</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>page - номер страницы</li>
+                <li>min_price</li>
+                <li>max_price</li>
+                <li>title</li>
+                <li>user_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Получить заказы пользователей GET /user</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>page - номер страницы</li>
+                <li>email</li>
+                <li>username</li>
+                <li>user_id</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

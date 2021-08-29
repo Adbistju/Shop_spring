@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>help</title>
+    <style type="text/css">
+      * {
+        margin: 10px;
+        padding: 0;
+        /*font-family: "1 Amazone M";*/
+        /*font-family: "Virtual DJ";*/
+      }
+
+      .base {
+        margin: auto;
+        align-content: center;
+        background-color: azure;
+        background-color: rgb(158, 235, 235);
+      }
+
+      .center {
+        margin: auto;
+        max-width: 1440px;
+        align-content: center;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 1440px;
+        border: 10px double black;
+        margin-top: 30px;
+      }
+
+      .my-2 {
+        border: 1px double black;
+        padding: 20px;
+        margin: 10px;
+      }
+
+      .controller {
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+
+      .function {
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+
+      .ulu {
+        margin-left: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="base container">
+      <div class="col-12">
+        <div class="col-12">
+          <h1 class="center">...</h1>
+          <h3>AdminController</h3>
+          <br /><br />
+          <h2>Контроллеры для пользователей уровня ADMIN:</h2>
+          <div class="controller">
+            <h4>AdminCategoryController /admin</h4>
+            <div class="function">
+              <h5>Получить категорию GET /category</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>title</li>
+                <li>price</li>
+                <li>category_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Обновить категорию PUT /category/update</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>category</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Удалить категорию DELETE /category/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>id</li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+          <div class="controller">
+            <h4>AdminProductController /admin</h4>
+            <div class="function">
+              <h5>Получить все продукты GET /products</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>page - номер страницы</li>
+                <li>min_price</li>
+                <li>max_price</li>
+                <li>title</li>
+                <li>category_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Получить продукт GET /products/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Получить продукт GET /products/newProduct</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>title</li>
+                <li>price</li>
+                <li>category_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Обновить продукт PUT /products/update</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>productDto</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Обновить продукт DELTE /products/{id}</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>id</li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+
+          <div class="controller">
+            <h4>AdminUserAndOrderController /admin</h4>
+            <div class="function">
+              <h5>Получить заказы пользователей GET /order</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>page - номер страницы</li>
+                <li>min_price</li>
+                <li>max_price</li>
+                <li>title</li>
+                <li>user_id</li>
+              </ul>
+            </div>
+            <div class="function">
+              <h5>Получить заказы пользователей GET /user</h5>
+              <p>Параметры</p>
+              <ul class="ulu">
+                <li>page - номер страницы</li>
+                <li>email</li>
+                <li>username</li>
+                <li>user_id</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
