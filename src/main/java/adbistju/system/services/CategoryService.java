@@ -23,14 +23,13 @@ public class CategoryService {
         return categoryRepository.findAll(spec);
     }
 
-    public List<Category> findAll() {
-        return categoryRepository.findAll();
+    public Category updateCategory(Category category) {
+        Category cat = categoryRepository.findByTitle(category.getTitle()).get();
+        cat.setTitle(category.getTitle());
+        return cat;
     }
-//    public Optional<Category> findByTitle(String title) {
-//        return categoryRepository.findByTitle(title);
-//    }
-//
-//    public Optional<Collection<Category>> findByTitle(Collection<String> title) {
-//        return categoryRepository.findByTitle(title);
-//    }
+
+    public void deleteCategory(Long id) {
+        categoryRepository.deleteById(id);
+    }
 }

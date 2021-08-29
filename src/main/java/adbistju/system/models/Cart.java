@@ -17,7 +17,6 @@ import java.util.Iterator;
 @Data
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Cart implements Serializable {
-    //private List<OrderItemDto> items;
     private ArrayList<OrderItemDto> items;
     private BigDecimal sum;
 
@@ -28,13 +27,15 @@ public class Cart implements Serializable {
 
 
     public void addItem(OrderItemDto orderItemDto) {
-        for (OrderItemDto i: items) {
-            if(i.equals(orderItemDto)){
-                i.setQuantity(i.getQuantity()+1);
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getProductId().equals(orderItemDto.getProductId())
+                    && items.get(i).getProductTitle().equals(orderItemDto.getProductTitle())) {
+                items.get(i).setQuantity(items.get(i).getQuantity()+1);
+                recalculate();
                 return;
             }
         }
-        orderItemDto.setQuantity(orderItemDto.getQuantity()+1);
+        orderItemDto.setQuantity(1);
         items.add(orderItemDto);
         recalculate();
     }
@@ -60,14 +61,23 @@ public class Cart implements Serializable {
     }
 
     public void deleteItem(Long id) {
-        items.remove(id);
-        recalculate();
+        for (int i = 0; i < items.size(); i++) {
+            if(items.get(i).getProductId()==id){
+                items.remove(i);
+                recalculate();
+                return;
+            }
+        }
     }
 
     public void recalculate(){
         sum = BigDecimal.ZERO;
+        BigDecimal buf = new BigDecimal(0);
         for (OrderItemDto i: items) {
-            sum = sum.add(i.getPrice());
+            buf = buf.add(i.getPrice());
+            buf = buf.multiply(BigDecimal.valueOf(i.getQuantity()));
+            sum = sum.add(buf);
+            buf = BigDecimal.ZERO;
         }
     }
 

@@ -4,13 +4,12 @@
 // ---загляни в пом---
 package adbistju.system.config;
 
+
 import adbistju.system.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -31,7 +30,7 @@ public class DaoSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/auth_page/**").authenticated()
 //                .antMatchers("/session/**").authenticated()
                 .antMatchers("/admin/**").hasAnyRole("ADMIN", "SUPERADMIN")
-                .antMatchers("/cart/**").hasAnyRole("USER")
+                .antMatchers("/cart/**").hasAnyRole("USER","ADMIN", "SUPERADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .formLogin();

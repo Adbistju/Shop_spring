@@ -1,4 +1,4 @@
-package adbistju.system.repository;
+package adbistju.system.repository.order;
 
 import adbistju.system.models.order.Order;
 import adbistju.system.models.order.OrderItem;
